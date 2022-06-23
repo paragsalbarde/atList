@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-title>All Item</mat-card-title>
+    <mat-card-subtitle>Following are the items You have added till date. You can Publish and Unpublish</mat-card-subtitle>
+    <mat-card-content>
+    <!-- START: List Items -->
+    <mat-selection-list [multiple]="true">
+        <div mat-subheader>Published</div>
+        <mat-list-option *ngFor="let folder of folders">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <div mat-line>{{folder.name}}</div>
+          <div mat-line> {{folder.updated | date}} </div>
+        </mat-list-option>
+        <mat-divider></mat-divider>
+        <div mat-subheader>Unpublished</div>
+        <mat-list-option *ngFor="let note of notes">
+          <mat-icon mat-list-icon>note</mat-icon>
+          <div mat-line>{{note.name}}</div>
+          <div mat-line> {{note.updated | date}} </div>
+        </mat-list-option>
+    </mat-selection-list>           
+    <!-- END: List Items -->
+
+   
+</mat-card-content>
+    <mat-card-actions><!--align="end">-->
+      <button mat-button>UnPublish</button>
+      <button mat-button>Publish</button>
+    </mat-card-actions>
+</mat-card>
