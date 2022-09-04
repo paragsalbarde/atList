@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,11 @@ import { MatListModule } from '@angular/material/list';
 import { AtlistLoginComponent } from './atlist-login/atlist-login.component';
 import { AtlistFormComponent } from './atlist-form/atlist-form.component';
 import { AtlistDataComponent } from './atlist-data/atlist-data.component';
+import { AddItemComponent } from './add-item/add-item.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,12 +35,14 @@ import { AtlistDataComponent } from './atlist-data/atlist-data.component';
     AtlistNavComponent,
     AtlistLoginComponent,
     AtlistFormComponent,
-    AtlistDataComponent
+    AtlistDataComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
@@ -48,7 +57,11 @@ import { AtlistDataComponent } from './atlist-data/atlist-data.component';
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

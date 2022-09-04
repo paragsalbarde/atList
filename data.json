@@ -1,28 +1,79 @@
 {
-    "items" : [
-        {
-            "name": "Photos",
-            "updated": "1/1/16"
-          },
-          {
-            "name": "Recipes",
-            "updated": "1/17/16"
-          },
-          {
-            "name": "Work",
-            "updated": "1/28/16"
-          },
-          {
-            "name": "Vacation Itinerary",
-            "updated": "2/20/16"
-          },
-          {
-            "name": "Kitchen Remodel",
-            "updated": "1/18/16"
-          },
-          {
-            "name": "New Item",
-            "updated": "23/06/2022"
-          }
-    ]
+  "user" : [
+    {
+      "userId": "admin",
+      "userName": "admin",
+      "userPwd": "admin",
+      "userType":"",
+      "userLocation":""
+      
+    }
+  ],
+  "items": [
+    {
+      "id": 1001,
+      "name": "Aaloo",
+      "updated": "1/1/16",
+      "published": true,
+      "measureUnit": "kg",
+      "quantity": 1
+    },
+    {
+      "id": 1002,
+      "name": "Bhendi",
+      "updated": "1/1/16",
+      "published": true,
+      "measureUnit": "kg",
+      "quantity": 1
+    },
+    {
+      "id": 1003,
+      "name": "Paalak",
+      "updated": "1/1/16",
+      "published": true,
+      "measureUnit": "kg",
+      "quantity": 1
+    },
+    {
+      "id": 1004,
+      "name": "Methi",
+      "updated": "1/12/21",
+      "published": false,
+      "measureUnit": "gms",
+      "quantity": 1
+    },
+    {
+      "id": 1005,
+      "name": "Kaande",
+      "updated": "1/1/16",
+      "published": true,
+      "measureUnit": "kg",
+      "quantity": 1
+    },
+    {
+      "id": 1006,
+      "name": "Dhaniya",
+      "updated": "1/2/22",
+      "published": true,
+      "measureUnit": "gms",
+      "quantity": 0
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

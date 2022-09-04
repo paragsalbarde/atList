@@ -1,44 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-export interface Section {
-  name: string;
-  updated: Date;
-}
+import { ItemsInterface } from '../model/item';
+
 
 @Component({
   selector: 'app-atlist-data',
   templateUrl: './atlist-data.component.html',
   styleUrls: ['./atlist-data.component.scss']
 })
-export class AtlistDataComponent implements OnInit {
 
-  constructor() { }
+export class AtlistDataComponent implements OnInit {
+  
+  items: ItemsInterface[] = [];
+  
+  constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
+    this.http
+    .get<ItemsInterface[]>('http://localhost:3000/items')
+    .subscribe((items: ItemsInterface[]) => {
+      console.log(items)
+      this.items = items
+    })
   }
-
-  folders: Section[] = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
-  notes: Section[] = [
-    {
-      name: 'Vacation Itinerary',
-      updated: new Date('2/20/16'),
-    },
-    {
-      name: 'Kitchen Remodel',
-      updated: new Date('1/18/16'),
-    },
-  ];
 }

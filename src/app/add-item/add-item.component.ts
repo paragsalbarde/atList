@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-atlist-form',
-  templateUrl: './atlist-form.component.html',
-  styleUrls: ['./atlist-form.component.scss']
+  selector: 'app-add-item',
+  templateUrl: './add-item.component.html',
+  styleUrls: ['./add-item.component.scss']
 })
-export class AtlistFormComponent  {
+export class AddItemComponent {
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
@@ -22,25 +21,8 @@ export class AtlistFormComponent  {
     shipping: ['free', Validators.required]
   });
 
-  addItemForm = this.fb.group({
-    id: null,
-    itemName: [null, Validators.required],
-    itemUpdatedOn: [null, Validators.required],
-    itemPublish: ['yes', Validators.required],
-    itemMeasureUnit: ['yes', Validators.required],
-    itemQuantity: null
-     
-  });
-
   hasUnitNumber = false;
   
-  itemMeasureUnits = [
-    {name: 'Kilogram', abbreviation: 'Kg'},
-    {name: 'Grams', abbreviation: 'Gms'},
-    {name: 'Dozens', abbreviation: 'Dzn'},
-    {name: 'Pieces', abbreviation: 'Pcs'}
-  ]
-
   states = [
     {name: 'Alabama', abbreviation: 'AL'},
     {name: 'Alaska', abbreviation: 'AK'},
@@ -108,5 +90,4 @@ export class AtlistFormComponent  {
   onSubmit(): void {
     alert('Thanks!');
   }
-
 }
